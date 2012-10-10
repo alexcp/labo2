@@ -20,8 +20,14 @@ public class Labo2 {
            return resultat;
     }
 
+    public static String construireUrl(String auteur,String nomDeProjet){
+        String url = "https://api.github.com/repos/";
+        url += auteur + "/" + nomDeProjet + "/commits";
+        return url;
+    }
+
     public static void main(String[] args) {
-        String url = "https://api.github.com/repos/alexcp/inf2015/commits";
+        String url = construireUrl(args[0],args[1]);
         DocumentJson json = new DocumentJson(lireUrl(url));
         json.afficherMessage();
     }
