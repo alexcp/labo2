@@ -29,6 +29,6 @@ public class Labo2 {
     public static void main(String[] args) {
         String url = construireUrl(args[0],args[1]);
         DocumentJson json = new DocumentJson(lireUrl(url));
-        json.afficherMessage();
+        DocumentJson.ecrireFichier(json.nouvelObjetJson());
     }
 }
